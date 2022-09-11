@@ -595,7 +595,7 @@ function decr(id, price, quantity) {
     //document.getElementById(id).remove;
     cartData.splice(cartData.indexOf(item), 1);
     //console.log(cartData)
-    
+    totalP();
   }
   else {
     qnty.innerHTML = `<button onClick="incr(${id},${price}, ${quantity})">+</button> ${quantity} <button onClick="decr(${id},${price}, ${quantity})">-</button>`;
