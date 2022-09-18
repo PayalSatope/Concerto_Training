@@ -518,11 +518,9 @@ function showItemList() {
 
 
   if (cartData.length == 0) {
-    alert("Currently no items in the cart");
+    alert("There are no items in the cart");
     cartPage.style.display = 'none'
     main.style.display = 'block';
-
-
   }
   else {
     var quantity = 1;
@@ -595,13 +593,17 @@ function decr(id, price, quantity) {
     //document.getElementById(id).remove;
     cartData.splice(cartData.indexOf(item), 1);
     //console.log(cartData)
-    
+    totalP();
   }
   else {
     qnty.innerHTML = `<button onClick="incr(${id},${price}, ${quantity})">+</button> ${quantity} <button onClick="decr(${id},${price}, ${quantity})">-</button>`;
     prc.innerHTML = price * quantity;
     totalP();
   }
-  
+  if (cartData.length == 0) {
+    alert("There are no items in the cart");
+    cartPage.style.display = 'none'
+    main.style.display = 'block';
+  }
 }
 
